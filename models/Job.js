@@ -40,4 +40,5 @@ const tireSchema = new mongoose.Schema({
 }, { timestamps: true })
 
 
+
 module.exports = mongoose.model('tires', tireSchema)
