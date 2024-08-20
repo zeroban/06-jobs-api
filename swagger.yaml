@@ -1,0 +1,277 @@
+openapi: 3.0.0
+info:
+  title: Tire API
+  contact: {}
+  version: "1.0"
+servers:
+  - url: https://tires-api-david.onrender.com/api/v1
+    variables: {}
+paths:
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      summary: Register User
+      operationId: RegisterUser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/RegisterUserRequest"
+                - example:
+                    name: bob
+                    email: bob@gmail.com
+                    password: secret
+            example:
+              name: bob
+              email: bob@gmail.com
+              password: secret
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Login User
+      operationId: LoginUser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/LoginUserRequest"
+                - example:
+                    email: bob@gmail.com
+                    password: secret
+            example:
+              email: bob@gmail.com
+              password: secret
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+  /tires:
+    post:
+      tags:
+        - Tires
+      summary: Create Tire
+      operationId: CreateTire
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/CreateJobRequest"
+                - example:
+                    brand: Michelin
+                    size: LT275/65R24
+                    location: Mebane
+                    price: "399.69"
+                    quantity: "199"
+            example:
+              brand: Michelin
+              size: LT275/65R24
+              location: Mebane
+              price: "399.69"
+              quantity: "199"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    get:
+      tags:
+        - Tires
+      summary: Get All Tires
+      operationId: GetAllTires
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /tires/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The tire ID
+    get:
+      tags:
+        - Tires
+      summary: Get Single Tire
+      operationId: GetSingleTire
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+
+    patch:
+      tags:
+        - Tires
+      summary: Update Tire
+      operationId: UpdateTire
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/UpdateJobRequest"
+                - example:
+                    brand: Random Fam
+                    size: LT275/65R15
+                    location: Mebane
+                    price: "39.99"
+                    quantity: "2013"
+            example:
+              brand: Random Fam
+              size: LT275/65R15
+              location: Mebane
+              price: "39.99"
+              quantity: "2013"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+
+    delete:
+      tags:
+        - Tires
+      summary: Delete Tire
+      operationId: DeleteTire
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+components:
+  schemas:
+    RegisterUserRequest:
+      title: RegisterUserRequest
+      required:
+        - name
+        - email
+        - password
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        name: bob
+        email: bob@gmail.com
+        password: secret
+    LoginUserRequest:
+      title: LoginUserRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: bob@gmail.com
+        password: secret
+    CreateJobRequest:
+      title: CreateTireRequest
+      required:
+        - brand
+        - size
+        - location
+        - price
+        - quantity
+      type: object
+      properties:
+        brand:
+          type: string
+        size:
+          type: string
+        location:
+          type: string
+        price:
+          type: string
+        quantity:
+          type: string
+      example:
+        brand: Michelin
+        size: LT275/65R24
+        location: Mebane
+        price: "399.69"
+        quantity: "199"
+    UpdateJobRequest:
+      title: UpdateTireRequest
+      required:
+        - brand
+        - size
+        - location
+        - price
+        - quantity
+      type: object
+      properties:
+        brand:
+          type: string
+        size:
+          type: string
+        location:
+          type: string
+        price:
+          type: string
+        quantity:
+          type: string
+      example:
+        brand: Random Fam
+        size: LT275/65R15
+        location: Mebane
+        price: "39.99"
+        quantity: "2013"
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+  - name: Auth
+    description: ""
+  - name: Tires
+    description: ""
