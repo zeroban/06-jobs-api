@@ -3,12 +3,12 @@ const { StatusCodes } = require('http-status-codes')
 const { BadRequestError, NotFoundError } = require('../errors')
 
 
-const getAllJobs = async (req, res) => {
+const getAllTires = async (req, res) => {
     const tires = await Tires.find({ createdBy: req.user.userId }).sort('createdAt')
     res.status(StatusCodes.OK).json({ tires, count: tires.length })
 }
 
-const getJob = async (req, res) => {
+const getTire = async (req, res) => {
     // searches for the userID and tireID to make sure they match
     const { user: { userId }, params: { id: tireID }, } = req
 
@@ -21,13 +21,13 @@ const getJob = async (req, res) => {
     res.status(StatusCodes.OK).json({ tires })
 }
 
-const createJob = async (req, res) => {
+const createTire = async (req, res) => {
     req.body.createdBy = req.user.userId
     const tires = await Tires.create(req.body)
     res.status(StatusCodes.CREATED).json({ tires })
 }
 
-const updateJob = async (req, res) => {
+const updateTire = async (req, res) => {
     // searches for the userID and tireID to make sure they match
     const {
         body: { brand, size, location, price, quantity },
@@ -49,7 +49,7 @@ const updateJob = async (req, res) => {
 
 }
 
-const deleteJob = async (req, res) => {
+const deleteTire = async (req, res) => {
     // searches for the userID and tireID to make sure they match
     const { user: { userId }, params: { id: tireID }, } = req
 
@@ -67,11 +67,11 @@ const deleteJob = async (req, res) => {
 
 
 module.exports = {
-    getAllJobs,
-    getJob,
-    createJob,
-    updateJob,
-    deleteJob,
+    getAllTires,
+    getTire,
+    createTire,
+    updateTire,
+    deleteTire,
 
 
 }
