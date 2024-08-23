@@ -60,7 +60,8 @@ const deleteTire = async (req, res) => {
     if (!tires) {
         throw new NotFoundError(`No tire found with ID: ${tireID}`)
     }
-    res.status(StatusCodes.OK).send()
+    // res.status(StatusCodes.OK).send()
+    res.status(StatusCodes.OK).json({ msg: "The entry was deleted." });
 }
 
 
