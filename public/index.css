@@ -1,0 +1,46 @@
+h1 {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  background-color: antiquewhite;
+}
+
+#message {
+  background-color: rgb(208, 255, 0);
+  size: 48px;
+  font-weight: 800;
+}
+
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#tires,
+#edit-tire {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+th {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#tires-message {
+  background-color: red;
+}
+
+td {
+  border-bottom: 1px solid black;
+  border-color: black;
+  padding: 5px;
+}
