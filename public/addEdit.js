@@ -35,7 +35,7 @@ export const handleAddEdit = () => {
 
                 if (addingTire.textContent === "update") {
                     method = "PATCH";
-                    url = `/api/v1/tires/${addEditDiv.dataset.tireID}`;
+                    url = `/api/v1/tires/${addEditDiv.dataset.id}`;
                 }
 
                 try {

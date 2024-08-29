@@ -9,23 +9,27 @@ h1 {
   background-color: antiquewhite;
 }
 
-#message {
+/* #message {
   background-color: rgb(208, 255, 0);
   size: 48px;
   font-weight: 800;
-}
+} */
 
 #message {
   position: absolute;
-  top: 50%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgb(208, 255, 0);
+  size: 48px;
+  font-weight: 800;
+  margin: 10px 10px 10px 10px;
 }
 
 #tires,
 #edit-tire {
   position: absolute;
-  top: 30%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
