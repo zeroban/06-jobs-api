@@ -61,8 +61,8 @@ export const showTires = async () => {
                 for (let i = 0; i < data.tires.length; i++) {
                     let rowEntry = document.createElement("tr");
 
-                    let editButton = `<td><button type="button" class="editButton" data-id=${data.tires[i]._id}>edit</button></td>`;
-                    let deleteButton = `<td><button type="button" class="deleteButton" data-id=${data.tires[i]._id}>delete</button></td>`;
+                    let editButton = `<td><button type="button" class="editButton" data-id=${data.tires[i]._id}>Edit</button></td>`;
+                    let deleteButton = `<td><button type="button" class="deleteButton" data-id=${data.tires[i]._id}>Delete</button></td>`;
                     let rowHTML = `
               <td>${data.tires[i].brand}</td>
               <td>${data.tires[i].size}</td>
