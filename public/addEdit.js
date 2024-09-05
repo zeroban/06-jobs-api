@@ -93,7 +93,7 @@ export const showAddEdit = async (tireID) => {
         location.value = " ";
         price.value = " ";
         quantity.value = " ";
-        addingTire.textContent = "add";
+        addingTire.textContent = "Add";
         message.textContent = "";
 
         setDiv(addEditDiv);
