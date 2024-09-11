@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  position: relative;
+  margin-top: 5%;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  color: #333;
+}
+
+#message {
+  position: relative;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #d0ff00;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+th {
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  background-color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #facaca;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.deleteButton {
+  background-color: red;
+}
+
+/* Still need to work on getting the login section and register section looking nice */
+#email,
+#name,
+#email1,
+#password1,
+#password2 {
+  margin: 6px 0;
+}

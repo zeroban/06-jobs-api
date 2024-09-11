@@ -22,7 +22,18 @@ const getTire = async (req, res) => {
 }
 
 const createTire = async (req, res) => {
+
+    // extracts multiple properties from the req.body and assigns it to the matching fields
+    const { brand, size, location, price, quantity } = req.body;
+
+    // validates to make sure their are not blank fields
+    if (!brand || !size || !location || !price || !quantity) {
+        throw new BadRequestError('Please ensure all fields are filled in. Can not submit blank fields.');
+    }
+
+    // sets the createdby user
     req.body.createdBy = req.user.userId
+
     const tires = await Tires.create(req.body)
     res.status(StatusCodes.CREATED).json({ tires })
 }
@@ -60,7 +71,8 @@ const deleteTire = async (req, res) => {
     if (!tires) {
         throw new NotFoundError(`No tire found with ID: ${tireID}`)
     }
-    res.status(StatusCodes.OK).send()
+    // res.status(StatusCodes.OK).send()
+    res.status(StatusCodes.OK).json({ msg: "The entry was deleted." });
 }
 
 

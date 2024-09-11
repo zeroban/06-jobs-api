@@ -23,10 +23,13 @@ const connectDB = require('./db/connect')
 const authenticateUser = require('./middleware/authentication')
 
 
+app.use(express.static("public"));
 
-app.get('/', (req, res) => {
-  res.send(`<h1>API Docs</h1><a href="/api-docs">Documentation</a>`)
-})
+
+
+// app.get('/', (req, res) => {
+//   res.send(`<h1>API Docs</h1><a href="/api-docs">Documentation</a>`)
+// })
 
 // initializing swagger for api documentation 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
