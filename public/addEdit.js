@@ -8,8 +8,8 @@ let size = null;
 let location = null;
 
 // if left uncommented it breaks the addingTire option
-// let price = null;
-// let quantity = null;
+let price = null;
+let quantity = null;
 let addingTire = null;
 
 
@@ -18,8 +18,8 @@ export const handleAddEdit = () => {
     brand = document.getElementById("brand");
     size = document.getElementById("size");
     location = document.getElementById("location");
-    // price = document.getElementById("price");
-    // quantity = document.getElementById("quantity");
+    price = document.getElementById("price");
+    quantity = document.getElementById("quantity");
     addingTire = document.getElementById("adding-tire");
     const editCancel = document.getElementById("edit-cancel");
 
